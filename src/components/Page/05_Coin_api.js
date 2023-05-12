@@ -70,6 +70,7 @@ const Coin_Api =()=>{
                                 <input placeholder="상한 가격"  className="Coin_UserInput" onChange={e=>setUpInput(e.target.value)} />
                                 <input placeholder="하한 가격"  className="Coin_UserInput" onChange={e=>setLowInput(e.target.value)} />
                             </div>
+                            {/* <button onClick={()=>console.log(coindata)}>123</button> */}
                             <button className="Coin_Alert_Button" value={value.closing_price} onClick={(e)=>{
                                 
                                 let AlertRun = setInterval(()=>{

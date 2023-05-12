@@ -1,51 +1,91 @@
-import { useQuery } from "react-query";
+import React, { Component } from "react";
+import ApexCharts from "react-apexcharts";
+import '../CSS/Coin_Chart.css'
 
-const DataChart = () => {
+class DataChart extends React.Component {
+  
+  constructor(props) {
+    super(props);
 
-    const 필요한데이터요청 = "data";
-    
-    const {isLoading, error, data, isFetching} = useQuery(
-	    필요한데이터요청, () => {
-        	return fetch(`https://api.bithumb.com/public/candlestick/BTC_KRW/24h`)
-                .then((res) => res.json())
-                .then((res) => res.data) // return값이 data에 담기게 된다. 
+    this.state = {
+      data : ''   
+    };
+    console.log(this.state)
+  }
+  callApi = () => {
+    fetch(`https://api.bithumb.com/public/candlestick/BTC_KRW/10m`)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          data: res.data
+        })
+      })
+  }
+  componentDidMount() {
+    this.callApi();
+  }
+  
+  render() {
+    return (
+      <div className="charts">
+        <button onClick={()=>console.log()}>123</button>
+     {this.state.data ? <ApexCharts 
+         
+          type="candlestick"
+          series={[
+            {
+              data: 
+                  Object.values(this.state.data).map((price) => ({
+                    x : price[0],
+                    y : [price[1], price[2], price[3], price[4]]
+
+                })),
+            },
+          ]}
+          options={{
+            theme: {
+              mode: "dark",
+            },
+            chart: {
+              type: "candlestick",
+              height: 200,
+              width: 400,
+              toolbar: {
+                show:true,
+              },
+              background: "transparent",
+            },
+            stroke: {
+              curve: "smooth",
+              width: 2,
+            },
+            yaxis: {
+              show: true,
+            },
+            xaxis: {
+              type: "datetime",
+              categories:  Object.values(this.state.data).map((price) => {
+               return price[0]
+              }),
+              labels: {
+                style: {
+                  colors: '#9c88ff'
                 }
-            , { 
-                enabled: !!필요한데이터요청, // 해당 변수가 있을 때만 요청을 보낸다
-              	refetchInterval: 1000 // 1초마다 갱신
+              }
+            },
+            plotOptions: {
+              candlestick: {
+                colors: {
+                  upward: '#3C90EB',
+                  downward: '#DF7D46'
+                }
+              }
             }
-
+          }}
+        /> : null}
+      </div>
     );
-    
-    if(isLoading){
-        return <h1>로딩중!</h1>;
-    }
-    if(error){
-        return <h1>에러 발생!</h1>;
-    }
-    
-    
-    // return (
-    // <div>
-    //     <p>데아터 보여주기</p>
-    //     {true ? Object.entries(data).map(([key,value], i) =>{
-    //             return(
-    //                 <div className="Coin_div" key={i}>
-    //                         <div  className="Coin_list">{key}</div> 
-    //                         <div  className="Coin_list" >{value.closing_price} won</div> 
-    //                         <div  className="Coin_list"><a style={ `${value.fluctate_24H}` < 0 ? { color:'blue'} : {color : 'red'} } >{value.fluctate_24H}  {`${value.fluctate_24H}`< 0 ?   'won ▼' : 'won ▲' }</a></div>
-    //                         <div  className="Coin_list"><a style={ `${value.fluctate_rate_24H}` < 0 ? { color:'blue'} : {color : 'red'} } >{value.fluctate_rate_24H}  {`${value.fluctate_rate_24H}`< 0 ?   '% ▼' : '% ▲' }</a></div>
-    //                         <div  className="Coin_list">{value.acc_trade_value_24H} </div>
-    //                         <div  className="Coin_list">{value.units_traded} </div>
-    //                     <div className="Coin_Alert">
-                         
-                           
-    //                     </div>
-    //                 </div>
-    //         )})
-    //          : null }
-        
-    // </div>);
+  }
 }
 
 export default DataChart;
