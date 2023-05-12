@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../CSS/Coin_api.css';
 
+
 const Coin_Api =()=>{
     // 코인 api 데이터 저장
     const [coindata, setCoinData] = useState();
