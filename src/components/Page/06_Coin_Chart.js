@@ -3,16 +3,17 @@ import ApexCharts from "react-apexcharts";
 import '../CSS/Coin_Chart.css'
 import { useQuery } from "react-query";
 
-const DataChart =()=> {
-  
+const DataChart =({coinName})=> {
+ 
   const Coin_Chart = "data1";
     
     const {isLoading, error, data} = useQuery
     (
 	    Coin_Chart, () => {
-        	return fetch(`https://api.bithumb.com/public/candlestick/BTC_KRW/24h`)
+        	return fetch(`https://api.bithumb.com/public/candlestick/${coinName}_KRW/24h`)
                 .then((res) => res.json())
                 .then((res) => res.data) // return값이 data에 담기게 된다. 
+                
                 }
             , { 
                 enabled: !!Coin_Chart, // 해당 변수가 있을 때만 요청을 보낸다
@@ -29,7 +30,8 @@ const DataChart =()=> {
     
     return (
       <div className="charts">
-     
+     <button onClick={()=>console.log(coinName)}>123</button>
+     {coinName}
      <ApexCharts 
          
           type="candlestick"

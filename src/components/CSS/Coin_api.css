@@ -70,7 +70,11 @@
     
 }
 .Coin_Alert{
+    
     display: flex;
+    flex-direction :column ;
+    background-color: aqua;
+    
 }
 .Coin_Alert_Button{
     color : rgb(8, 129, 160);
@@ -94,3 +98,4 @@
     float : left;
     
 }
+
