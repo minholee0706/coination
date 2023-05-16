@@ -30,7 +30,7 @@ const DataChart =({coinName})=> {
     
     return (
       <div className="charts">
-     <button onClick={()=>console.log(coinName)}>123</button>
+     <button onClick={()=>console.log(coinName)}>123123</button>
      {coinName}
      <ApexCharts 
          

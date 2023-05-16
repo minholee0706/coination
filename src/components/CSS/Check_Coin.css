@@ -5,3 +5,10 @@
     flex-direction: column;
 }
 
+.QCP{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    float: left;
+    
+}

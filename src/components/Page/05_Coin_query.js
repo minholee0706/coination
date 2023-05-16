@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import '../CSS/Coin_api.css';
+import '../CSS/Coin_query.css';
 import DataChart from "./06_Coin_Chart";
 import { useState } from "react";
 
@@ -31,8 +31,15 @@ const Data = ({getData}) => {
    
         
     return (
-    <div>
-        
+    <div className="Coin_Query_div">
+         <div className="Coin_div_bar">
+                <div className="Coin_list_type">가산자산명</div>
+                <div  className="Coin_list_type">현재가</div>
+                <div  className="Coin_list_type">변동가</div>
+                <div  className="Coin_list_type">변동률</div>
+                <div  className="Coin_list_type">총 거래금액</div>
+                <div  className="Coin_list_type">거래량</div>
+        </div>
         {true ? Object.entries(data).map(([key,value], i) =>{
                 return(
                     <div>

@@ -23,15 +23,17 @@ const Check_Coin =()=>{
             <div><Profile /></div>
             {/* <div className="CoinAPI"><Coin_Api /></div> */}
 
-            <button onClick={()=>console.log(coinName)}>123</button>
+            <div className="QCP">
             <QueryClientProvider client={queryClient} >
-            <DataChart coinName={coinName}/>
-                <Data getData={getData}/>
-                
-                
-                
-            </QueryClientProvider>
             
+                <div className="DataChart_api">
+                 <DataChart coinName={coinName}/>
+                </div>
+                <div className="Data_api">
+                    <Data getData={getData}/>
+                </div>
+            </QueryClientProvider>
+            </div>    
         </div>
     );
 };
