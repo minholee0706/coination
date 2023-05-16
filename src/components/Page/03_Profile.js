@@ -42,11 +42,13 @@ const Profile =()=> {
     return(
         <div className="Profile_All">
             <div className="Profile_Home"><Link to='/' className="Link_Home">CoinTeer</Link></div>
+            <div className="Profile_nav_div">
             <div className="Progile_Gragh_Alert"><Link to='/Check_Coin' className="Link_Check_Coin">Gragh & Alert</Link></div>
             <div className="Profile_Donate"><Link to='/Donation' className='Link_Donate'> Donate</Link></div>
             <div className="Profile_DonateList"><Link to='/DonateList' className='Link_DonateList'> DonateList</Link></div>
             <div className="Profile_DonateList"><Link to='/Minting' className='Link_DonateList'> Minting</Link></div>
             <div className="Profile_DonateList"><Link to='/NFTList' className='Link_DonateList'> NFTList</Link></div>
+            </div>
             <div className="Profile_UserInfo">
             <img src={profileImage} className="Profile_UserImage"></img> 
             <div className="Profile_UserName">

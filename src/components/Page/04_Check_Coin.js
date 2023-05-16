@@ -23,7 +23,7 @@ const Check_Coin =()=>{
             <div><Profile /></div>
             {/* <div className="CoinAPI"><Coin_Api /></div> */}
 
-            <div className="QCP">
+            {/* <div className="QCP">
             <QueryClientProvider client={queryClient} >
             
                 <div className="DataChart_api">
@@ -33,7 +33,7 @@ const Check_Coin =()=>{
                     <Data getData={getData}/>
                 </div>
             </QueryClientProvider>
-            </div>    
+            </div>     */}
         </div>
     );
 };

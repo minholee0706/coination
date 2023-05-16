@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 .Profile_All{
     width: 100%;
-    height: 10vh;
-    background-color: rgb(8, 129, 160);
+    height: 70px;
+    background-color: rgba(21, 5, 23, 0.80);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .Profile_Home{
     display: flex;
@@ -15,25 +16,35 @@
     font-weight: 900;
     margin-left: 50px;
     font-family: 'Bruno Ace SC', cursive;
+}
+.Profile_nav_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
     
 }
 .Progile_Gragh_Alert,.Profile_Donate,.Profile_DonateList{
-    font-size: 1.5em;
+    font-size: 1.0em;
     font-weight: 700;
     color : white;
+    margin-right: 20px;
+   
 }
 .Profile_UserInfo{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items : center;
-    width : 30%;
-    margin-left: 20%;
+    width : 20%;
+    color : white;
+    
 }
 .Profile_UserImage{
     width : 50px;
     height: 5vh;
-    border: 2px solid black;
+    border: 2px solid #ff7f5d;
     border-radius: 100%;
     margin-right: 20px;
 }
@@ -41,6 +52,7 @@
     display: inline;
 }
 .Profile_UserNickName{
+    color : white;
     font-size: 1.3em;
     font-weight: 700;
 }
@@ -49,16 +61,18 @@
     font-size: 1.2em;
     font-weight: 900;
     text-decoration: none;
+    color : white;
 }
 
 .Link_Home,.Link_Check_Coin,.Link_Donate,.Link_DonateList{
     text-decoration: none;
     color : white;
 }
-.Link_Home:hover, .Link_Check_Coin:hover, .Link_Donate:hover,.Link_DonateList:hover{
-    color : black;
-    transition : 0.4s;
-    scale : 1.1;
+.Link_Check_Coin:hover, .Link_Donate:hover,.Link_DonateList:hover,.Profile_logout:hover{
+    color : #ff7f5d;
+    border-bottom: 3px solid #ff7f5d;
+    transition:all 0.1s;
+    
 }
 .Link_Home:not(:hover),.Link_Check_Coin:not(:hover), .Link_Donate:not(:hover),.Link_DonateList:not(:hover){
     transition: 0.4s ease-out;
