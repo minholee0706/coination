@@ -31,6 +31,7 @@ const DonateList =()=>{
         try{
           const web = new Web3(window.ethereum);
           setWeb3(web);
+          
         }catch(err){
           console.log(err);
         }

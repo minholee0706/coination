@@ -20,12 +20,12 @@
     font-weight: 700;
     color : rgb(8, 129, 160);
     background-color: white;
-    border: 3px solid rgb(8, 129, 160);
+    border: 3px solid rgba(21, 5, 23, 0.80);
     border-radius: 10px;
 }
 .DonateList_Total_Coin:hover,.DonateList_ListButton:hover{
     color : white;
-    background-color: rgb(8, 129, 160);
+    background-color: #ff7f5d;
 }
 .DonateList_Balance{
     color : rgb(255, 145, 0);

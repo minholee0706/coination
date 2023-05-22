@@ -41,7 +41,7 @@ const Profile =()=> {
     
     return(
         <div className="Profile_All">
-            <div className="Profile_Home"><Link to='/' className="Link_Home">CoinTeer</Link></div>
+            <div className="Profile_Home"><Link to='/' className="Link_Home">CoiNation</Link></div>
             <div className="Profile_nav_div">
             <div className="Progile_Gragh_Alert"><Link to='/Check_Coin' className="Link_Check_Coin">Gragh & Alert</Link></div>
             <div className="Profile_Donate"><Link to='/Donation' className='Link_Donate'> Donate</Link></div>
